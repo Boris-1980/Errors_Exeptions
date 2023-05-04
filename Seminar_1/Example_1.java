@@ -16,7 +16,7 @@ public class Example_1 {
         int[] arr2 = { 7, 6, 3, 4 };
         int[] result = diffArrays(arr1, arr2);
         if( result == null) {
-            System.out.println("Длины массивов не равны ");
+            System.out.println("Ошибка: Длины массивов не равны ");
         } else {
             System.out.println("Новый массив: " + Arrays.toString(result));
         }
