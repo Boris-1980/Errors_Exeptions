@@ -1,6 +1,6 @@
 package Seminar_3;
 
-import java.io.IOException;
+
 import java.util.Scanner;
 import java.util.zip.DataFormatException;
 
@@ -35,26 +35,28 @@ public class Main {
     }
 
     private static void processNewUser(Scanner scanner) {
-        System.out.println("Введите данные (фамилия имя отчество датарождения номертелефона пол):");
+        System.out.println("Введите данные через пробел (Фамилия Имя Отчество Дата_рождения Номер_телефона пол(f или m)):");
         String inputData = scanner.nextLine();
-
+    
         try {
             Person person = DataParser.parseData(inputData);
             FileReaderWriter.writeDataToFile(person);
             System.out.println("Данные успешно записаны в файл.");
         } catch (DataFormatException e) {
             System.out.println("Ошибка формата данных: " + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("Ошибка записи в файл: " + e.getMessage());
         }
     }
+    
 
     private static void readDataFromFile(Scanner scanner) {
         System.out.println("Введите фамилию для чтения данных:");
         String surname = scanner.nextLine();
+    
         FileReaderWriter.readDataFromFile(surname);
     }
+    
 }
+
 
 
 // public class Main {
