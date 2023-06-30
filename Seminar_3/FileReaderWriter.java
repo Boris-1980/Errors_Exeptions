@@ -3,7 +3,7 @@ package Seminar_3;
 import java.io.*;
 
 public class FileReaderWriter {
-    public static void writeDataToFile(Person person) throws IOException {
+    public static void writeDataToFile(Person person) {
         String filename = person.getSurname() + ".txt";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {
@@ -13,7 +13,8 @@ public class FileReaderWriter {
             writer.write(dataLine);
             writer.newLine();
         } catch (IOException e) {
-            throw new IOException("Ошибка при записи в файл", e);
+            e.printStackTrace();
+            System.out.println("Ошибка при записи в файл: " + e.getMessage());
         }
     }
 
@@ -26,6 +27,7 @@ public class FileReaderWriter {
                 System.out.println(line);
             }
         } catch (IOException e) {
+            e.printStackTrace();
             System.out.println("Ошибка при чтении файла: " + e.getMessage());
         }
     }
