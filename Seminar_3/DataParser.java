@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.zip.DataFormatException;
 
 public class DataParser {
-    private static final int REQUIRED_DATA_COUNT = 6; // Количество требуемых данных
+    private static final int REQUIRED_DATA_COUNT = 6; // сколько данных
 
     public static Person parseData(String inputData) throws DataFormatException {
         String[] data = inputData.split(" ");
@@ -23,11 +23,11 @@ public class DataParser {
             long phoneNumber = Long.parseLong(data[4]);
             char gender = data[5].charAt(0);
 
-            // Проверяем формат даты рождения
+            // Проверка ДР
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
             LocalDate.parse(dateOfBirth, formatter);
 
-            // Проверяем формат пола
+            // Проверка пола
             if (gender != 'f' && gender != 'm') {
                 throw new DataFormatException("Неверный формат пола");
             }
