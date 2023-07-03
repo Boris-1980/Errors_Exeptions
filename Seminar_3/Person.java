@@ -18,7 +18,6 @@ public class Person {
         this.gender = gender;
     }
 
-    // Геттеры для получения значений полей
     public String getSurname() {
         return surname;
     }
